@@ -30,9 +30,9 @@ h2 {
 h2:before{
     content: "";
     border: 1px solid #737373;
-    width: 100px;
+    width: 150px;
     height: 20px;
-    margin-right: -60px;
+    margin-right: -100px;
 }
 a {
     color: #171717;
@@ -126,19 +126,35 @@ section#carrousel {
     border: 1px solid #737373;
     border-right: none;
     border-left: none;
-    padding: 5px 0;
-    padding-left: 5%;    
+    padding: 8px 0;
     font-family: 'Crimson Pro', Georgia, serif;
     font-style: italic;
     text-transform: lowercase;
     margin: 30px 0;
     letter-spacing: .5px;
+    overflow: hidden;
+    white-space: nowrap;
 }
-section#carrousel span {
+
+.marquee-track {
+    display: inline-block;
+    animation: marquee 18s linear infinite;
+}
+
+.marquee-track span {
+    margin: 0 1rem;
+}
+
+.marquee-track span.dot {
     color: rgb(133, 116, 72);
-    font-style:normal;
-    margin: 0px 10px;
+    font-style: normal;
     font-size: 10px;
+    vertical-align: middle;
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
 }
 div#lanzflex {
     display: flex;
