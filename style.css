@@ -30,6 +30,7 @@ h2 {
 h2:before{
     content: "";
     border: 1px solid #737373;
+    border-right: none;
     width: 150px;
     height: 20px;
     margin-right: -100px;
