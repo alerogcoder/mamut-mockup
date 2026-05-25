@@ -63,12 +63,26 @@
     </section>
     <h2 id="lanzamientos">últimos lanzamientos</h2>
         <div id="lanzflex">
-            <article class="single">
+            <article class="single" 
+                    data-title="Morocco Funk"
+                    data-artist="Carajillo Coltrane"
+                    data-artistph="./assets/Carajillo.jpg"
+                    data-description="Descripción del single aquí"
+                    data-img="./assets/morocco-funk.jpeg"
+                    data-audio="./assets/Carajillo Coltrane - Morocco Funk.mp3"
+                    data-spotify="#">
                 <img src="./assets/morocco-funk.jpeg" alt="Carátula de Morocco Funk" />
                 <div class="single-title">Morocco Funk</div>
                 <div class="single-info">Carajillo Coltrane</div>
             </article>
-            <article class="single">
+            <article class="single" 
+                    data-title="Tempestad"
+                    data-artist="Willy Fuego"
+                    data-artistph="./assets/willy.jpeg"
+                    data-description="Descripción del single aquí"
+                    data-img="./assets/tempestad-jpeg"
+                    data-audio="./assets/Willy Fuego - Tempestad.mp3"
+                    data-spotify="#">
                 <img src="./assets/tempestad.jpeg" alt="Carátula de Tempestad" />
                 <div class="single-title">Tempestad</div>
                 <div class="single-info">Willy Fuego</div>
@@ -83,6 +97,23 @@
         <p><img alt="Logo de Mamut Galàcitc" src="./assets/favicon-16x16-light.png" /></p>
         <p>web by alerogcoder</p>
     </footer>
+</div>
+<div id="modal-overlay">
+    <div id="modal">
+        <button id="modal-close">✕</button>
+        <div id="modal-content">
+            <img id="modal-img" src="" alt="" />
+            <div id="modal-info">
+                <h2 id="modal-title"></h2>
+                <p id="modal-artist"></p>
+                <p id="modal-description"></p>
+                <audio id="modal-audio" controls>
+                    <source id="modal-audio-src" src="" type="audio/mpeg">
+                </audio>
+                <div id="modal-links"></div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
