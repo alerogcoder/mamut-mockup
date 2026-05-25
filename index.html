@@ -70,7 +70,8 @@
                     data-description="Descripción del single aquí"
                     data-img="./assets/morocco-funk.jpeg"
                     data-audio="./assets/Carajillo Coltrane - Morocco Funk.mp3"
-                    data-spotify="#">
+                    data-spotify="#"
+                    data-bandcamp="#">
                 <img src="./assets/morocco-funk.jpeg" alt="Carátula de Morocco Funk" />
                 <div class="single-title">Morocco Funk</div>
                 <div class="single-info">Carajillo Coltrane</div>
@@ -80,9 +81,10 @@
                     data-artist="Willy Fuego"
                     data-artistph="./assets/willy.jpeg"
                     data-description="Descripción del single aquí"
-                    data-img="./assets/tempestad-jpeg"
+                    data-img="./assets/tempestad.jpeg"
                     data-audio="./assets/Willy Fuego - Tempestad.mp3"
-                    data-spotify="#">
+                    data-spotify="#"
+                    data-bandcamp="#">
                 <img src="./assets/tempestad.jpeg" alt="Carátula de Tempestad" />
                 <div class="single-title">Tempestad</div>
                 <div class="single-info">Willy Fuego</div>
@@ -102,18 +104,24 @@
     <div id="modal">
         <button id="modal-close">✕</button>
         <div id="modal-content">
-            <img id="modal-img" src="" alt="" />
-            <div id="modal-info">
-                <h2 id="modal-title"></h2>
-                <p id="modal-artist"></p>
-                <p id="modal-description"></p>
-                <audio id="modal-audio" controls>
-                    <source id="modal-audio-src" src="" type="audio/mpeg">
-                </audio>
-                <div id="modal-links"></div>
+            <div id="modal-artist-photo">
+                <img id="modal-artist-img" src="" alt="" />
             </div>
+<div id="modal-info">
+    <div id="modal-header">
+        <img id="modal-img" src="" alt="" />
+        <h2 id="modal-title"></h2>
+    </div>
+    <p id="modal-artist"></p>
+    <p id="modal-description"></p>
+    <audio id="modal-audio" controls>
+        <source id="modal-audio-src" src="" type="audio/mpeg">
+    </audio>
+    <div id="modal-links"></div>
+</div>
         </div>
     </div>
 </div>
+<script src="script.js"></script>
 </body>
 </html>

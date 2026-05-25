@@ -305,3 +305,134 @@ footer span {
         text-align: center;
     }
 }
+#modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+#modal-overlay.active {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+#modal-overlay.active {
+    display: flex;
+}
+
+#modal {
+    background-color: #fafafa;
+    border: 1px solid #737373;
+    max-width: 700px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 2rem;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+#modal-overlay.active #modal {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: crosshair;
+    color: #171717;
+    transition: color .2s ease;
+}
+
+#modal-close:hover {
+    color: rgb(133, 116, 72);
+}
+
+#modal-content {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+#modal-info h2:before {
+    display: none;
+}
+#modal-artist-photo {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+#modal-artist-img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #737373;
+}
+
+#modal-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+#modal-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 1px solid #737373;
+    flex-shrink: 0;
+}
+
+#modal-info {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+#modal-info h2 {
+    font-size: 2rem;
+}
+
+#modal-info p {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-style: italic;
+    color: #555;
+}
+
+#modal-audio {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+#modal-links a {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid rgb(133, 116, 72);
+    color: rgb(133, 116, 72);
+    margin-right: 1rem;
+}
+
+@media (max-width: 480px) {
+    #modal-content {
+        flex-direction: column;
+    }
+
+    #modal-img {
+        width: 100%;
+    }
+
+    #modal-info {
+        width: 100%;
+    }
+}
