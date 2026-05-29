@@ -331,6 +331,7 @@ footer span {
 
 #modal-player iframe {
     width: 100%;
+    height: 42px !important;
     border: none;
 }
 #modal-links a:hover,
@@ -358,7 +359,110 @@ article.single:focus-visible,
     background: none;
     cursor: crosshair;
 }
+/* ── PROXIMAMENT / SHOP ── */
+section#coming-soon {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.25rem;
+    padding: 3rem 0;
+}
 
+#coming-soon .cs-title {
+    display: block;
+    font-size: clamp(3.5rem, 12vw, 7rem);
+    line-height: 0.95;
+    letter-spacing: 2px;
+}
+
+/* anula la línea decorativa que arrastra h2 */
+#coming-soon .cs-title::before {
+    content: none;
+}
+
+/* puntos animados después del título */
+#coming-soon .cs-title::after {
+    content: "...";
+    color: rgb(133, 116, 72);
+    animation: cs-dots 1.6s steps(4, end) infinite;
+}
+
+@keyframes cs-dots {
+    from { clip-path: inset(0 100% 0 0); }
+    to   { clip-path: inset(0 0 0 0); }
+}
+
+#coming-soon .cs-text {
+    max-width: 30rem;
+    color: #555;
+}
+
+/* barra de carga indeterminada */
+#coming-soon .cs-loader {
+    width: min(420px, 80%);
+    height: 3px;
+    background: rgba(115, 115, 115, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+#coming-soon .cs-bar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40%;
+    background: rgb(133, 116, 72);
+    animation: cs-load 1.6s ease-in-out infinite;
+}
+
+@keyframes cs-load {
+    from { left: -40%; }
+    to   { left: 100%; }
+}
+
+/* tarjetas "fantasma" con efecto shimmer */
+#coming-soon .cs-skeletons {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+#coming-soon .cs-card {
+    width: 160px;
+    height: 200px;
+    border: 1px solid #737373;
+    background: linear-gradient(100deg,
+        rgba(115, 115, 115, 0.06) 30%,
+        rgba(133, 116, 72, 0.18) 50%,
+        rgba(115, 115, 115, 0.06) 70%);
+    background-size: 200% 100%;
+    animation: cs-shimmer 1.8s linear infinite;
+}
+
+#coming-soon .cs-card:nth-child(2) { animation-delay: 0.2s; }
+#coming-soon .cs-card:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes cs-shimmer {
+    from { background-position: 200% 0; }
+    to   { background-position: -200% 0; }
+}
+
+/* respeta a quien prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+    #coming-soon .cs-bar,
+    #coming-soon .cs-card,
+    #coming-soon .cs-title::after {
+        animation: none;
+    }
+    #coming-soon .cs-bar { left: 0; width: 100%; opacity: 0.5; }
+    #coming-soon .cs-title::after { clip-path: none; }
+}
 /* ── TABLET ── */
 @media (max-width: 768px) {
     header .headcontainer {
