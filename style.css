@@ -1,7 +1,11 @@
 *, *::before, *::after {
     box-sizing: border-box;
 }
-html { scroll-behavior: smooth; }
+
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
 }
@@ -15,12 +19,12 @@ input, button, textarea, select {
     font: inherit;
 }
 
-h1, h2 {
-    font-family: 'Bebas Neue', sans-serif;
-}
-
 p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
+}
+
+h1, h2 {
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 h2 {
@@ -56,6 +60,7 @@ body {
     color: #171717;
 }
 
+/* ── HEADER ── */
 header {
     position: fixed;
     left: 50%;
@@ -88,6 +93,7 @@ nav a {
     margin: 0 0.3rem;
 }
 
+/* ── LAYOUT ── */
 .container {
     max-width: 1200px;
     width: 95%;
@@ -95,15 +101,12 @@ nav a {
     padding-top: 7rem;
 }
 
+/* ── ABOUT ── */
 .subtitle {
     font-family: 'Crimson Pro', Georgia, serif;
     font-style: italic;
     text-transform: lowercase;
     letter-spacing: 0.5px;
-}
-
-section#about {
-    margin: auto;
 }
 
 section#about p {
@@ -131,6 +134,7 @@ section#about article .descripcion {
     text-align: justify;
 }
 
+/* ── CARROUSEL ── */
 section#carrousel {
     border: 1px solid #737373;
     border-right: none;
@@ -166,6 +170,7 @@ section#carrousel {
     to { transform: translateX(-50%); }
 }
 
+/* ── LANZAMIENTOS ── */
 div#lanzflex {
     display: flex;
     gap: 1.25rem;
@@ -181,6 +186,7 @@ article.single {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    cursor: crosshair;
 }
 
 div.single-title {
@@ -210,6 +216,7 @@ div.single-info {
     font-size: 0.9rem;
 }
 
+/* ── FOOTER ── */
 footer {
     display: flex;
     align-items: center;
@@ -227,7 +234,7 @@ footer span {
     font-weight: 900;
 }
 
-
+/* ── MODAL ── */
 #modal-overlay {
     display: none;
     position: fixed;
@@ -238,12 +245,10 @@ footer span {
     justify-content: center;
     transition: background-color 0.3s ease;
 }
+
 #modal-overlay.active {
     display: flex;
     background-color: rgba(0, 0, 0, 0.7);
-}
-#modal-overlay.active {
-    display: flex;
 }
 
 #modal {
@@ -259,6 +264,7 @@ footer span {
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
 #modal-overlay.active #modal {
     transform: translateY(0);
     opacity: 1;
@@ -285,34 +291,16 @@ footer span {
     gap: 2rem;
     align-items: flex-start;
 }
-#modal-info h2:before {
-    display: none;
-}
+
 #modal-artist-photo {
     width: 45%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
     flex-shrink: 0;
 }
+
 #modal-artist-img {
     width: 100%;
     height: auto;
     border: 1px solid #737373;
-}
-
-#modal-header {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-}
-
-#modal-img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border: 1px solid #737373;
-    flex-shrink: 0;
 }
 
 #modal-info {
@@ -322,29 +310,55 @@ footer span {
     gap: 0.8rem;
 }
 
-#modal-info h2 {
+#modal-artist {
+    font-family: 'Bebas Neue', sans-serif;
     font-size: 2rem;
+    color: #171717;
+    font-style: normal;
+    letter-spacing: 1px;
 }
 
-#modal-info p {
+#modal-description {
     font-family: 'Crimson Pro', Georgia, serif;
     font-style: italic;
     color: #555;
 }
 
-#modal-audio {
+#modal-player {
     width: 100%;
     margin-top: 0.5rem;
 }
 
-#modal-links a {
+#modal-player iframe {
+    width: 100%;
+    border: none;
+}
+#modal-links a:hover,
+#modal-links button:hover {
+    color: #171717;
+}
+
+article.single:focus-visible,
+#modal-close:focus-visible,
+#modal-links a:focus-visible,
+#modal-links button:focus-visible {
+    outline: 2px solid rgb(133, 116, 72);
+    outline-offset: 3px;
+}
+#modal-links a,
+#modal-links button {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 2px;
+    border: none;
     border-bottom: 1px solid rgb(133, 116, 72);
     color: rgb(133, 116, 72);
     margin-right: 1rem;
+    padding: 0;
+    background: none;
+    cursor: crosshair;
 }
+
 /* ── TABLET ── */
 @media (max-width: 768px) {
     header .headcontainer {
@@ -436,14 +450,6 @@ footer span {
     }
 
     #modal-info {
-        width: 100%!important;
-    }
-
-    #modal-header {
-        gap: 0.6rem;
-    }
-
-    #modal-info h2 {
-        font-size: 1.5rem;
+        width: 100%;
     }
 }
