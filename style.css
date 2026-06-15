@@ -359,7 +359,121 @@ article.single:focus-visible,
     background: none;
     cursor: crosshair;
 }
-/* ── PROXIMAMENT / SHOP ── */
+/* ── NOVETATS ── */
+#novetatsflex {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+    padding: 1.25rem 0;
+}
+
+article.novetat {
+    border: 1px solid #737373;
+    display: flex;
+    flex-direction: column;
+    background: #fafafa;
+    transition: border-color .2s ease;
+}
+
+article.novetat:hover {
+    border-color: rgb(133, 116, 72);
+}
+
+.novetat--text {
+    border-top: 3px solid rgb(133, 116, 72);
+}
+
+.novetat-media {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-bottom: 1px solid #737373;
+}
+
+.novetat-media iframe,
+.novetat-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    display: block;
+}
+
+.novetat-body {
+    padding: 0.9rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex: 1;
+}
+
+.novetat-date {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-style: italic;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    color: rgb(133, 116, 72);
+}
+
+.novetat-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1;
+    letter-spacing: 0.5px;
+}
+
+.novetat-text {
+    font-size: 0.85rem;
+    color: #404040;
+}
+
+.novetat-link {
+    margin-top: auto;
+    align-self: flex-start;
+    padding-top: 0.4rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgb(133, 116, 72);
+    border-bottom: 1px solid rgb(133, 116, 72);
+    cursor: crosshair;
+}
+/* el botó de play sobre la miniatura */
+.novetat-media {
+    position: relative; /* afegeix-ho si no hi era ja */
+}
+
+.novetat-video .novetat-media img {
+    transition: transform .3s ease;
+}
+
+.novetat-video:hover .novetat-media img {
+    transform: scale(1.05);
+}
+
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3.4rem;
+    height: 3.4rem;
+    border: 1px solid #fafafa;
+    border-radius: 50%;
+    background: rgba(23, 23, 23, 0.55);
+    color: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    padding-left: 0.2rem; /* centra òpticament el triangle */
+    transition: background .2s ease;
+}
+
+.novetat-video:hover .play-btn {
+    background: rgb(133, 116, 72);
+}
 section#coming-soon {
     min-height: 60vh;
     display: flex;
@@ -378,7 +492,6 @@ section#coming-soon {
     letter-spacing: 2px;
 }
 
-/* anula la línea decorativa que arrastra h2 */
 #coming-soon .cs-title::before {
     content: none;
 }
@@ -400,7 +513,6 @@ section#coming-soon {
     color: #555;
 }
 
-/* barra de carga indeterminada */
 #coming-soon .cs-loader {
     width: min(420px, 80%);
     height: 3px;
@@ -423,7 +535,6 @@ section#coming-soon {
     to   { left: 100%; }
 }
 
-/* tarjetas "fantasma" con efecto shimmer */
 #coming-soon .cs-skeletons {
     display: flex;
     gap: 1.25rem;
@@ -453,7 +564,6 @@ section#coming-soon {
     to   { background-position: -200% 0; }
 }
 
-/* respeta a quien prefiere menos movimiento */
 @media (prefers-reduced-motion: reduce) {
     #coming-soon .cs-bar,
     #coming-soon .cs-card,
