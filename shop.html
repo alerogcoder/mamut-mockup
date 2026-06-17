@@ -24,6 +24,7 @@
     <div class="icons">
         <a href="https://www.instagram.com/mamutgalacticrecords/" title="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
         <a href="https://mamutgalacticrecords.bandcamp.com/community" title="Bandcamp" target="_blank" rel="noopener"><i class="fa-brands fa-bandcamp"></i></a>
+        <a href="https://www.youtube.com/@mamutgalacticrecords" title="Youtube" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
     </div>
     <nav>
         <a href="#novetats">Novetats</a>
@@ -33,21 +34,41 @@
   </div>
 </header>
 <div class="container">
-    <section id="coming-soon">
-        <p class="subtitle">dance and fight</p>
-        <h2 class="cs-title">Proximament</h2>
-        <p class="cs-text">Estem muntant la botiga de marxandatge. Torna aviat.</p>
+<h2 id="botiga">Botiga</h2>
+<div id="botigaflex">
 
-        <div class="cs-loader" role="status" aria-label="Botiga en construcció">
-            <span class="cs-bar"></span>
+    <!-- Producte AMB talles (samarreta) -->
+    <article class="product">
+        <div class="product-media">
+            <img src="./assets/samarreta.jpg" alt="Samarreta Mamut Galàctic">
         </div>
+        <div class="product-body">
+            <p class="product-name">Samarreta Mamut Galàctic</p>
+            <p class="product-price">25 €</p>
+            <p class="product-sizes-label">Talla:</p>
+            <div class="product-sizes" role="group" aria-label="Tria de talla">
+                <button class="size" aria-pressed="false" data-link="#">S</button>
+                <button class="size" aria-pressed="false" data-link="#">M</button>
+                <button class="size" aria-pressed="false" data-link="#">L</button>
+                <button class="size" aria-pressed="false" data-link="#">XL</button>
+            </div>
+            <button class="buy-btn" type="button" data-link="#" disabled>Comprar →</button>
+        </div>
+    </article>
 
-        <div class="cs-skeletons" aria-hidden="true">
-            <div class="cs-card"></div>
-            <div class="cs-card"></div>
-            <div class="cs-card"></div>
+    <!-- Producte SENSE talles (vinil/disc) -->
+    <article class="product">
+        <div class="product-media">
+            <img src="./assets/vinil.jpg" alt="Vinil — Títol del disc">
         </div>
-    </section>
+        <div class="product-body">
+            <p class="product-name">Vinil — Títol del disc</p>
+            <p class="product-price">18 €</p>
+            <a class="buy-btn" href="#">Comprar →</a>
+        </div>
+    </article>
+
+</div>
     <footer>
         <p><span>© 2026</span> Mamut Galàctic Records</p>
         <p><img alt="Logo de Mamut Galàctic" src="./assets/favicon-16x16-light.png" /></p>

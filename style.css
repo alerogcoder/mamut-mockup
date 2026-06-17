@@ -667,3 +667,114 @@ section#coming-soon {
         width: 100%;
     }
 }
+/* ── BOTIGA ── */
+#botigaflex {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.25rem;
+    padding: 1.25rem 0;
+}
+
+article.product {
+    border: 1px solid #737373;
+    display: flex;
+    flex-direction: column;
+    background: #fafafa;
+}
+
+.product-media {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-bottom: 1px solid #737373;
+}
+
+.product-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.product-body {
+    padding: 0.9rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    flex: 1;
+}
+
+.product-name {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.product-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: rgb(133, 116, 72);
+}
+
+.product-sizes-label {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-style: italic;
+    font-size: 0.8rem;
+    color: #555;
+    margin-bottom: -0.3rem;
+}
+
+.product-sizes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.size {
+    min-width: 2.4rem;
+    padding: 0.35rem 0.5rem;
+    border: 1px solid #737373;
+    background: none;
+    font-size: 0.75rem;
+    cursor: crosshair;
+    transition: all 0.15s ease;
+}
+
+.size:hover {
+    border-color: rgb(133, 116, 72);
+    color: rgb(133, 116, 72);
+}
+
+.size[aria-pressed="true"] {
+    background: #171717;
+    color: #fafafa;
+    border-color: #171717;
+}
+
+.buy-btn {
+    margin-top: auto;
+    align-self: flex-start;
+    padding: 0.55rem 1.1rem;
+    border: 1px solid #171717;
+    background: none;
+    color: #171717;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: crosshair;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.buy-btn:hover {
+    background: #171717;
+    color: #fafafa;
+}
+
+.buy-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    pointer-events: none;
+}
