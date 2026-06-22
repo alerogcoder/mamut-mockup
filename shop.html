@@ -37,34 +37,31 @@
 <h2 id="botiga">Botiga</h2>
 <div id="botigaflex">
 
-    <!-- Producte AMB talles (samarreta) -->
-    <article class="product">
+    <!-- Samarreta: amb guia de talles -->
+    <article class="product"
+        data-description="Samarreta de cotó orgànic amb el logotip del segell serigrafiat. Unisex."
+        data-sizeguide="true"
+        data-ondemand="true"
+        data-link="https://buy.stripe.com/test_aFa3cu87w1QKgVd4yNco001">
         <div class="product-media">
             <img src="./assets/samarreta.jpg" alt="Samarreta Mamut Galàctic">
         </div>
         <div class="product-body">
             <p class="product-name">Samarreta Mamut Galàctic</p>
             <p class="product-price">25 €</p>
-            <p class="product-sizes-label">Talla:</p>
-            <div class="product-sizes" role="group" aria-label="Tria de talla">
-                <button class="size" aria-pressed="false" data-link="#">S</button>
-                <button class="size" aria-pressed="false" data-link="#">M</button>
-                <button class="size" aria-pressed="false" data-link="#">L</button>
-                <button class="size" aria-pressed="false" data-link="#">XL</button>
-            </div>
-            <button class="buy-btn" type="button" data-link="#" disabled>Comprar →</button>
         </div>
     </article>
 
-    <!-- Producte SENSE talles (vinil/disc) -->
-    <article class="product">
+    <!-- Vinil: sense talles -->
+    <article class="product"
+        data-description="Edició limitada en vinil de 180 g. Inclou descàrrega digital."
+        data-link="#">
         <div class="product-media">
             <img src="./assets/vinil.jpg" alt="Vinil — Títol del disc">
         </div>
         <div class="product-body">
             <p class="product-name">Vinil — Títol del disc</p>
             <p class="product-price">18 €</p>
-            <a class="buy-btn" href="#">Comprar →</a>
         </div>
     </article>
 
@@ -75,5 +72,38 @@
         <p>web by alerogcoder</p>
     </footer>
 </div>
+<div id="modal-overlay">
+    <div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-artist">
+        <button id="modal-close" aria-label="Tancar">✕</button>
+        <div id="modal-content">
+            <div id="modal-artist-photo">
+                <img id="modal-artist-img" src="" alt="">
+            </div>
+            <div id="modal-info">
+                <p id="modal-artist"></p>
+                <p class="product-price"></p>
+                <p id="modal-description"></p>
+                <button type="button" class="size-guide-toggle" aria-expanded="false" hidden>Guia de talles</button>
+                <div class="size-guide" hidden>
+                    <table>
+                        <thead>
+                            <tr><th>Talla</th><th>Pit (cm)</th><th>Llarg (cm)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>S</td><td>48</td><td>69</td></tr>
+                            <tr><td>M</td><td>51</td><td>71</td></tr>
+                            <tr><td>L</td><td>54</td><td>73</td></tr>
+                            <tr><td>XL</td><td>57</td><td>75</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="size-guide-note">Mesures aproximades de la peça en pla. La talla es tria en el pagament.</p>
+                </div>
+                <p class="product-notice" hidden></p>
+                <button class="buy-btn" type="button" data-link="#">Comprar →</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="shopscript.js"></script>
 </body>
 </html>

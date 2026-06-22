@@ -718,30 +718,6 @@ article.product {
     color: rgb(133, 116, 72);
 }
 
-.product-sizes-label {
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-style: italic;
-    font-size: 0.8rem;
-    color: #555;
-    margin-bottom: -0.3rem;
-}
-
-.product-sizes {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-}
-
-.size {
-    min-width: 2.4rem;
-    padding: 0.35rem 0.5rem;
-    border: 1px solid #737373;
-    background: none;
-    font-size: 0.75rem;
-    cursor: crosshair;
-    transition: all 0.15s ease;
-}
-
 .size:hover {
     border-color: rgb(133, 116, 72);
     color: rgb(133, 116, 72);
@@ -777,4 +753,17 @@ article.product {
     opacity: 0.35;
     cursor: not-allowed;
     pointer-events: none;
+}
+article.product {
+    cursor: crosshair;
+    transition: border-color .2s ease;
+}
+
+article.product:hover {
+    border-color: rgb(133, 116, 72);
+}
+
+article.product:focus-visible {
+    outline: 2px solid rgb(133, 116, 72);
+    outline-offset: 3px;
 }
