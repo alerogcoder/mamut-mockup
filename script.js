@@ -23,7 +23,7 @@ document.querySelectorAll('article.single').forEach(single => {
 });
 
 function openSingle(single) {
-    const { artist, artistph, description: desc, embed, spotify, bandcamp } = single.dataset;
+    const { artist, artistph, description: desc, embed, spotify, bandcamp, platforms } = single.dataset;
     const title = single.querySelector('.single-title')?.textContent.trim() ?? artist;
     artistImg.src           = artistph;
     artistImg.alt           = artist;
@@ -33,7 +33,7 @@ function openSingle(single) {
     links.innerHTML = `
         <a href="${spotify}" target="_blank" rel="noopener">Spotify</a>
         <a href="${bandcamp}" target="_blank" rel="noopener">Comprar</a>
-        <a href="${single.dataset.platforms}" target="_blank" rel="noopener">Totes les plataformes</a>
+        <a href="${platforms}" target="_blank" rel="noopener">Totes les plataformes</a>
         <button type="button" data-action="share" data-title="${title} — ${artist}" data-url="${bandcamp}">Compartir</button>`;
     openModal(single);
 }
